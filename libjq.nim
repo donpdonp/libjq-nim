@@ -1,3 +1,4 @@
+
 type
   jv_Kind* = enum
     JV_KIND_INVALID, JV_KIND_NULL, JV_KIND_FALSE, JV_KIND_TRUE, JV_KIND_NUMBER,
@@ -20,3 +21,5 @@ proc jv_number_value*(jv: jq_Value): cdouble {.header: "<jq.h>", importc.}
 proc jv_string_value*(jv: jq_Value): cstring {.header: "<jq.h>", importc.}
 proc jv_copy*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 proc jv_free*(jv: jq_Value) {.header: "<jq.h>", importc.}
+
+include deserialize

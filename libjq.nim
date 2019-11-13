@@ -22,4 +22,4 @@ proc jv_string_value*(jv: jq_Value): cstring {.header: "<jq.h>", importc.}
 proc jv_copy*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 proc jv_free*(jv: jq_Value) {.header: "<jq.h>", importc.}
 
-include deserialize
+#include deserialize

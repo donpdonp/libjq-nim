@@ -23,7 +23,7 @@ proc jv_number_value*(jv: jq_Value): cdouble {.header: "<jq.h>", importc.}
 proc jv_string_value*(jv: jq_Value): cstring {.header: "<jq.h>", importc.}
 proc jv_copy*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 proc jv_free*(jv: jq_Value) {.header: "<jq.h>", importc.}
-proc jv_is_valid*(jv: jq_Value) {.header: "<jq.h>", importc.}
-proc jv_invalid_get_msg*(jv: jq_Value) {.header: "<jq.h>", importc.}
+proc jv_is_valid*(jv: jq_Value): cint {.header: "<jq.h>", importc.}
+proc jv_invalid_get_msg*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 
 #include deserialize

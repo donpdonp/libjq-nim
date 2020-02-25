@@ -5,6 +5,7 @@ type
     JV_KIND_STRING, JV_KIND_ARRAY, JV_KIND_OBJECT
 
 type jq_State* = ptr object
+type jq_Parser* = ptr object
 type jq_Value* {.header: "<jq.h>", importc: "jv"} = object
 
 proc jq_init*(): jq_State {.header: "<jq.h>", importc.}
@@ -27,5 +28,7 @@ proc jv_copy*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 proc jv_free*(jv: jq_Value) {.header: "<jq.h>", importc.}
 proc jv_is_valid*(jv: jq_Value): cint {.header: "<jq.h>", importc.}
 proc jv_invalid_get_msg*(jv: jq_Value): jq_Value {.header: "<jq.h>", importc.}
+proc jv_parser_new*(flags: cint): jq_Parser {.header: "<jq.h>", importc.}
+proc jv_parser_next*(jp: jq_Parser): jq_Value {.header: "<jq.h>", importc.}
 
 #include deserialize

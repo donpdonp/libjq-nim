@@ -14,6 +14,7 @@ proc jq_compile*(jsq: jq_State, jp: cstring): int {.header: "<jq.h>", importc.}
 proc jq_next*(jsq: jq_State): jq_Value {.header: "<jq.h>", importc.}
 proc jv_get_kind*(jv: jq_Value): jv_Kind {.header: "<jq.h>", importc.}
 proc jv_object_get*(jv: jq_Value, key: jq_Value): jq_Value {.header: "<jq.h>", importc.}
+proc jv_array*(): jq_Value {.header: "<jq.h>", importc.}
 proc jv_array_length*(jv: jq_Value): cint {.header: "<jq.h>", importc.}
 proc jv_array_get*(jv: jq_Value, idx: cint): jq_Value {.header: "<jq.h>", importc.}
 proc jv_object*(): jq_Value {.header: "<jq.h>", importc.}

@@ -17,6 +17,7 @@ proc jv_object_get*(jv: jq_Value, key: jq_Value): jq_Value {.header: "<jq.h>", i
 proc jv_array*(): jq_Value {.header: "<jq.h>", importc.}
 proc jv_array_length*(jv: jq_Value): cint {.header: "<jq.h>", importc.}
 proc jv_array_get*(jv: jq_Value, idx: cint): jq_Value {.header: "<jq.h>", importc.}
+proc jv_array_append*(jv: jq_Value, item: jq_Value): jq_Value {.header: "<jq.h>", importc.}
 proc jv_object*(): jq_Value {.header: "<jq.h>", importc.}
 proc jv_string*(str: cstring): jq_Value {.header: "<jq.h>", importc.}
 proc jv_parse*(str: cstring): jq_Value {.header: "<jq.h>", importc.}
